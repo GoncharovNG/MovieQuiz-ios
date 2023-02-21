@@ -8,6 +8,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     private let questionsAmount: Int = 10
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
+    private var statisticService = StatisticServiceImplementation()
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var textLabel: UILabel!
@@ -90,10 +91,15 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     private func showNextQuestionOrResults() {
         if currentQuestionIndex == questionsAmount - 1 {
             imageView.layer.borderColor = UIColor.clear.cgColor
-           
+            statisticService.store(correct: correctAnswers, total: questionsAmount)
+            statisticService.gamesCount += 1
             let text = correctAnswers == questionsAmount ?
-                    "Поздравляем, Вы ответили на 10 из 10!" :
-            "Вы ответили на \(correctAnswers) из 10, попробуйте ещё раз!"
+                    "Поздравляем, Вы ответили на 10 из 10!" : """
+                    "Вы ответили на \(correctAnswers) из 10
+                    Количество сыгранных квизов: \(statisticService.gamesCount)
+                    Рекорд: \(statisticService.bestGame.correct)/\(statisticService.bestGame.total) (\(statisticService.bestGame.date))
+                    Средеяя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%
+                    """
             let viewModel = QuizResultsViewModel(
                 title: "Этот раунд окончен!",
                 text: text,
@@ -109,8 +115,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionFactory?.requestNextQuestion()
         questionFactory = QuestionFactory(delegate: self)
+        questionFactory?.requestNextQuestion()
     }
     // MARK: - QuestionFactoryDelegate
 
