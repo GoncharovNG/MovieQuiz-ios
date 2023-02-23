@@ -6,8 +6,8 @@
 //
 import UIKit
 // для состояния "Результат ответа"
- struct QuizQuestion {
-        let image: String
-        let text: String
-        let correctAnswer: Bool
-    }
+struct QuizQuestion {
+    let image: String
+    let text: String
+    let correctAnswer: Bool
+}

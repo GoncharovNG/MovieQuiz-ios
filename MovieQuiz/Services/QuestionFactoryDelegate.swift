@@ -7,6 +7,6 @@
 import Foundation
 //Создаём протокол QuestionFactoryDelegate, который будем использовать в фабрике как делегата.
 protocol QuestionFactoryDelegate: AnyObject {
-//Объявляем метод, который должен быть у делегата фабрики.
+    //Объявляем метод, который должен быть у делегата фабрики.
     func didReceiveNextQuestion(question: QuizQuestion?)
 }

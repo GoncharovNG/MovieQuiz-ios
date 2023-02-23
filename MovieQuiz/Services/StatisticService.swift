@@ -13,7 +13,7 @@ struct GameRecord: Codable {
     let date: Date
     
     func reviewRecord(currentCorrect: Int, recordCorrect: Int ) -> Bool {
-     currentCorrect > recordCorrect
+        currentCorrect > recordCorrect
     }
 }
 
@@ -25,19 +25,19 @@ protocol StatisticService {
 }
 
 final class StatisticServiceImplementation: StatisticService {
-   
+    
     private let userDefaults = UserDefaults.standard
-   
+    
     private enum Keys: String {
         case correct, total, bestGame, gamesCount
     }
     
     var totalAccuracy: Double {
-    get {
-        let amountOfCorrect = (userDefaults.value(forKey: Keys.correct.rawValue) as? Double) ?? 0
-        let amountOfQuestions = (userDefaults.value(forKey: Keys.total.rawValue) as? Double) ?? 0
-        return amountOfCorrect / amountOfQuestions * 100
-    }
+        get {
+            let amountOfCorrect = (userDefaults.value(forKey: Keys.correct.rawValue) as? Double) ?? 0
+            let amountOfQuestions = (userDefaults.value(forKey: Keys.total.rawValue) as? Double) ?? 0
+            return amountOfCorrect / amountOfQuestions * 100
+        }
         set {
             
         }
@@ -62,7 +62,7 @@ final class StatisticServiceImplementation: StatisticService {
     var bestGame: GameRecord {
         get {
             guard let data = userDefaults.data(forKey: Keys.bestGame.rawValue),
-            let record = try? JSONDecoder().decode(GameRecord.self, from: data) else {
+                  let record = try? JSONDecoder().decode(GameRecord.self, from: data) else {
                 return .init(correct: 0, total: 0, date: Date())
             }
             return record
