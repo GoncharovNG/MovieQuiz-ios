@@ -48,7 +48,7 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d5z-mu-otd" userLabel="Preview Image">
                                         <rect key="frame" x="0.0" y="43.666666666666686" width="350" height="525"/>
-                                        <color key="backgroundColor" name="YP Background (iOS)"/>
+                                        <color key="backgroundColor" name="YP White (iOS)"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="d5z-mu-otd" secondAttribute="height" multiplier="2:3" id="zWp-5R-GKZ"/>
                                         </constraints>
@@ -134,8 +134,9 @@
                     <connections>
                         <outlet property="counterLabel" destination="4Zd-Pk-rJS" id="maA-Cp-KiX"/>
                         <outlet property="imageView" destination="d5z-mu-otd" id="rUm-5Y-Xav"/>
-                        <outlet property="label" destination="Kpv-XE-ckT" id="QIk-mr-32X"/>
+                        <outlet property="noButton" destination="hyt-AH-fgh" id="c35-yX-2Gk"/>
                         <outlet property="textLabel" destination="uLE-aZ-ENL" id="HTw-SP-Tc0"/>
+                        <outlet property="yesButton" destination="eu9-Mz-wSq" id="J98-yK-aTi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,9 +145,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="YP Background (iOS)">
-            <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="YP Black (iOS)">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
