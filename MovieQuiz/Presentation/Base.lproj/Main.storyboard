@@ -122,16 +122,22 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Tr4-eV-FDV">
+                                <rect key="frame" x="185" y="412" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black (iOS)"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Iz-fb-BmD" secondAttribute="trailing" constant="20" id="3De-sL-kdc"/>
+                            <constraint firstItem="Tr4-eV-FDV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PU3-da-NuD"/>
+                            <constraint firstItem="Tr4-eV-FDV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QMd-B0-C0Y"/>
                             <constraint firstItem="1Iz-fb-BmD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="rFD-MR-lgt"/>
                             <constraint firstItem="1Iz-fb-BmD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vtF-UF-Sqi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Tr4-eV-FDV" id="He6-oO-1UM"/>
                         <outlet property="counterLabel" destination="4Zd-Pk-rJS" id="maA-Cp-KiX"/>
                         <outlet property="imageView" destination="d5z-mu-otd" id="rUm-5Y-Xav"/>
                         <outlet property="noButton" destination="hyt-AH-fgh" id="c35-yX-2Gk"/>
